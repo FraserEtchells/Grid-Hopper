@@ -11,13 +11,17 @@ using System.Windows.Forms;
 namespace WindowsFormsApp2
 {
     public partial class GridHopper : Form
-    { 
+    {
         Random rand = new Random();
         Button[,] btn = new Button[5, 5];
+        Boolean trackButton = false;
         Boolean success = true;
         int score = 0;
         int lives = 3;
         private static System.Timers.Timer movementTimer;
+        private static System.Timers.Timer buttonTrackTimer;
+        private static System.Timers.Timer checkSuccessTimer;
+
 
         public GridHopper()
         {
@@ -44,29 +48,29 @@ namespace WindowsFormsApp2
                 }
             }
 
-            SetTimer();
+            SetMovementTimer();
+            SetButtonTrackTimer();
         }
 
         void colourSwap()
         {
-             for (int i = 0; i < btn.GetLength(1); i++)
+            for (int i = 0; i < btn.GetLength(1); i++)
             {
                 btn[4, i].BackColor = Color.Red; // by default, set all of the first line to red;
             }
 
-            int x = rand.Next(4) +1; //number of green squares this rotation
-            Console.WriteLine(x);
+            int x = rand.Next(4) + 1; //number of green squares this rotation
             int j = 0;
             while (j < x) // sets the specified number of green squares from above
-              {
-                 int y = rand.Next(4);
+            {
+                int y = rand.Next(5); //chooses a random position within the button array
 
                 if (btn[4, y].BackColor.Equals(Color.Red))
-                 {
-                     btn[4, y].BackColor = Color.Green;
+                {
+                    btn[4, y].BackColor = Color.Green;
                     j++;
-                 }
-              }
+                }
+            }
         }
 
         private void GridHopper_Load(object sender, EventArgs e)
@@ -74,7 +78,7 @@ namespace WindowsFormsApp2
 
         }
 
-        void btnEvent_Click(object sender, EventArgs e) 
+        void btnEvent_Click(object sender, EventArgs e)
         {
             if (((Button)sender).BackColor.Equals(Color.Green))
             {
@@ -85,20 +89,6 @@ namespace WindowsFormsApp2
                 success = false;
             }
 
-            checkSuccess();
-
-        }
-
-        void checkSuccess()
-        {
-            if(success == true)
-            {
-                score++;
-            }
-            else
-            {
-                lives--;
-            }
         }
 
         void copyColor()
@@ -110,10 +100,10 @@ namespace WindowsFormsApp2
                     btn[i, j].BackColor = btn[i + 1, j].BackColor;
                 }
             }
-     
+
         }
 
-        private void SetTimer() //Constructed using Microsoft Docs
+        private void SetMovementTimer()
         {
             movementTimer = new System.Timers.Timer(1000);
             movementTimer.Elapsed += OnTimedEvent;
@@ -123,8 +113,57 @@ namespace WindowsFormsApp2
 
         private void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e)
         {
+            success = false;
             copyColor();
             colourSwap();
+            if(trackButton == true)
+            {
+                SetCheckSuccessTimer();
+            }
+        }
+
+        private void SetButtonTrackTimer()
+        {
+            buttonTrackTimer = new System.Timers.Timer(5000);
+            buttonTrackTimer.Elapsed += BeginButtonTrack;
+            buttonTrackTimer.AutoReset = false;
+            buttonTrackTimer.Enabled = true;
+        }
+
+        private void BeginButtonTrack(Object source, System.Timers.ElapsedEventArgs e)
+        {
+            trackButton = true;
+            Console.WriteLine("Beginning Button Track");
+        }
+
+        private void SetCheckSuccessTimer()
+        {
+            checkSuccessTimer = new System.Timers.Timer(800);
+            checkSuccessTimer.Elapsed += CheckSuccess;
+            checkSuccessTimer.AutoReset = false;
+            checkSuccessTimer.Enabled = true;
+        }
+
+        private void CheckSuccess(Object source, System.Timers.ElapsedEventArgs e)
+        {
+            Console.WriteLine("Checking Success");
+            if (success == true)
+            {
+                Console.WriteLine("hit");
+                score++;
+            }
+            else
+            {
+                Console.WriteLine("miss");
+                lives--;
+            }
+
+            if(lives == 0)
+            {
+                Console.WriteLine("0 lives");
+                Console.WriteLine(score);
+                Application.Exit();
+            }
         }
 
     }
