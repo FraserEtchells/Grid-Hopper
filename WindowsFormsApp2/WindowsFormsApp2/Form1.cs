@@ -158,13 +158,12 @@ namespace WindowsFormsApp2
                 lives--;
             }
 
-            if(lives == 0)
+            if (lives == 0)
             {
                 Console.WriteLine("0 lives");
                 Console.WriteLine(score);
                 Application.Exit();
             }
         }
-
     }
 }
