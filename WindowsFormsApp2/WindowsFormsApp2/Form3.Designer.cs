@@ -47,6 +47,7 @@
             this.GameOverMsg.ForeColor = System.Drawing.SystemColors.Window;
             this.GameOverMsg.Location = new System.Drawing.Point(12, 36);
             this.GameOverMsg.Name = "GameOverMsg";
+            this.GameOverMsg.ReadOnly = true;
             this.GameOverMsg.Size = new System.Drawing.Size(222, 55);
             this.GameOverMsg.TabIndex = 0;
             this.GameOverMsg.Text = "Game Over!";
@@ -59,6 +60,7 @@
             this.EndMsg.ForeColor = System.Drawing.SystemColors.Window;
             this.EndMsg.Location = new System.Drawing.Point(9, 118);
             this.EndMsg.Name = "EndMsg";
+            this.EndMsg.ReadOnly = true;
             this.EndMsg.Size = new System.Drawing.Size(278, 40);
             this.EndMsg.TabIndex = 1;
             this.EndMsg.Text = "Better luck next time!";
@@ -87,6 +89,7 @@
             this.ScoreMsg.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ScoreMsg.Location = new System.Drawing.Point(414, 46);
             this.ScoreMsg.Name = "ScoreMsg";
+            this.ScoreMsg.ReadOnly = true;
             this.ScoreMsg.Size = new System.Drawing.Size(158, 42);
             this.ScoreMsg.TabIndex = 4;
             this.ScoreMsg.Text = "Your Score Was:";
@@ -107,6 +110,7 @@
             this.UserNameBox.Size = new System.Drawing.Size(303, 50);
             this.UserNameBox.TabIndex = 6;
             this.UserNameBox.Text = "";
+            this.UserNameBox.TextChanged += new System.EventHandler(this.UserNameBox_TextChanged);
             // 
             // EntUserNameMsg
             // 
@@ -115,15 +119,17 @@
             this.EntUserNameMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EntUserNameMsg.Location = new System.Drawing.Point(389, 110);
             this.EntUserNameMsg.Name = "EntUserNameMsg";
+            this.EntUserNameMsg.ReadOnly = true;
             this.EntUserNameMsg.Size = new System.Drawing.Size(150, 20);
             this.EntUserNameMsg.TabIndex = 7;
             this.EntUserNameMsg.Text = "Enter Your Name:";
             // 
             // LeaderBoardBox
             // 
-            this.LeaderBoardBox.Location = new System.Drawing.Point(403, 242);
+            this.LeaderBoardBox.Location = new System.Drawing.Point(382, 242);
             this.LeaderBoardBox.Name = "LeaderBoardBox";
-            this.LeaderBoardBox.Size = new System.Drawing.Size(298, 211);
+            this.LeaderBoardBox.ReadOnly = true;
+            this.LeaderBoardBox.Size = new System.Drawing.Size(334, 232);
             this.LeaderBoardBox.TabIndex = 8;
             this.LeaderBoardBox.Text = "";
             // 
@@ -132,9 +138,10 @@
             this.LeaderboardMsg.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.LeaderboardMsg.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.LeaderboardMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LeaderboardMsg.Location = new System.Drawing.Point(403, 221);
+            this.LeaderboardMsg.Location = new System.Drawing.Point(382, 221);
             this.LeaderboardMsg.Name = "LeaderboardMsg";
-            this.LeaderboardMsg.Size = new System.Drawing.Size(136, 20);
+            this.LeaderboardMsg.ReadOnly = true;
+            this.LeaderboardMsg.Size = new System.Drawing.Size(172, 20);
             this.LeaderboardMsg.TabIndex = 9;
             this.LeaderboardMsg.Text = "Leaderboards";
             // 
@@ -143,7 +150,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(835, 489);
+            this.ClientSize = new System.Drawing.Size(850, 510);
             this.Controls.Add(this.LeaderboardMsg);
             this.Controls.Add(this.LeaderBoardBox);
             this.Controls.Add(this.EntUserNameMsg);
