@@ -32,7 +32,7 @@ namespace WindowsFormsApp2
                 for (int j = 0; j < btn.GetLength(1); j++)
                 {
                     btn[i, j] = new Button();
-                    btn[i, j].SetBounds(100 * i, 100 * j, 60, 60); //70 width and height is perfect to make all the grid align, dont change them
+                    btn[i, j].SetBounds(75 * i, 75 * j, 60, 60); //70 width and height is perfect to make all the grid align, dont change them
                     btn[i, j].BackColor = Color.LightGray;
                     btn[i, j].Click += new EventHandler(this.btnEvent_Click);
                     Controls.Add(btn[i, j]);
@@ -44,7 +44,7 @@ namespace WindowsFormsApp2
             {
                 for (int j = 0; j < btn.GetLength(1); j++)
                 {
-                    btn[i, j].Enabled = false;
+                    btn[i, j].Enabled = false; //prevents the user clicking on buttons outwith the first column
                 }
             }
 
@@ -52,7 +52,7 @@ namespace WindowsFormsApp2
             SetButtonTrackTimer();
         }
 
-        void colourSwap()
+        private void colourSwap()
         {
             for (int i = 0; i < btn.GetLength(1); i++)
             {
@@ -78,7 +78,7 @@ namespace WindowsFormsApp2
 
         }
 
-        void btnEvent_Click(object sender, EventArgs e)
+        private void btnEvent_Click(object sender, EventArgs e) //checks whether a green button was clicked or a red button was clicked
         {
             if (((Button)sender).BackColor.Equals(Color.Green))
             {
@@ -91,7 +91,7 @@ namespace WindowsFormsApp2
 
         }
 
-        void copyColor()
+        private void copyColor() //allows each row to copy the color of the row to it's right, simulating the movement of the grid
         {
             for (int i = 0; i < 4; i++)
             {
@@ -106,12 +106,12 @@ namespace WindowsFormsApp2
         private void SetMovementTimer()
         {
             movementTimer = new System.Timers.Timer(1000);
-            movementTimer.Elapsed += OnTimedEvent;
+            movementTimer.Elapsed += ShiftGrid;
             movementTimer.AutoReset = true;
             movementTimer.Enabled = true;
         }
 
-        private void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e)
+        private void ShiftGrid (Object source, System.Timers.ElapsedEventArgs e)
         {
             success = false;
             copyColor();
