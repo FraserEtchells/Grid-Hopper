@@ -28,17 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.LiveMsgBox = new System.Windows.Forms.TextBox();
             this.LivesMsg = new System.Windows.Forms.TextBox();
+            this.LiveMsgBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // LiveMsgBox
-            // 
-            this.LiveMsgBox.Location = new System.Drawing.Point(601, 90);
-            this.LiveMsgBox.Name = "LiveMsgBox";
-            this.LiveMsgBox.Size = new System.Drawing.Size(143, 22);
-            this.LiveMsgBox.TabIndex = 0;
-            this.LiveMsgBox.TextChanged += new System.EventHandler(this.LiveMsgBox_TextChanged);
             // 
             // LivesMsg
             // 
@@ -52,14 +44,24 @@
             this.LivesMsg.TabIndex = 1;
             this.LivesMsg.Text = "Lives";
             // 
+            // LiveMsgBox
+            // 
+            this.LiveMsgBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LiveMsgBox.Location = new System.Drawing.Point(601, 98);
+            this.LiveMsgBox.Name = "LiveMsgBox";
+            this.LiveMsgBox.Size = new System.Drawing.Size(114, 28);
+            this.LiveMsgBox.TabIndex = 2;
+            this.LiveMsgBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.LiveMsgBox.TextChanged += new System.EventHandler(this.LiveMsgBox_TextChanged);
+            // 
             // GridHopper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.LivesMsg);
             this.Controls.Add(this.LiveMsgBox);
+            this.Controls.Add(this.LivesMsg);
             this.Name = "GridHopper";
             this.Text = "GridHopper";
             this.Load += new System.EventHandler(this.GridHopper_Load);
@@ -69,9 +71,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox LiveMsgBox;
         private System.Windows.Forms.TextBox LivesMsg;
+        private System.Windows.Forms.TextBox LiveMsgBox;
     }
 }
 
