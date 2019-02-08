@@ -13,12 +13,15 @@ namespace WindowsFormsApp2
 {
     public partial class EndForm : Form
     {
-        public EndForm()
+        int finalScore;
+
+        public EndForm(int score)
         {
             InitializeComponent();
+            finalScore = score;
         }
 
-        private void EndForm_Load(object sender, EventArgs e)
+        private void EndForm_Load(EventArgs e, object sender)
         {
 
         }

@@ -17,6 +17,8 @@ namespace WindowsFormsApp2
             InitializeComponent();
         }
 
+        Boolean hardMode = false;
+
         private void Form2_Load(object sender, EventArgs e)
         {
            
@@ -25,7 +27,7 @@ namespace WindowsFormsApp2
 
         private void startToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GridHopper gridHopper = new GridHopper();
+            GridHopper gridHopper = new GridHopper(hardMode);
             this.Hide();
             gridHopper.Show();
             
@@ -49,9 +51,14 @@ namespace WindowsFormsApp2
             Close();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void normalToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            hardMode = false;
+        }
 
+        private void hardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            hardMode = true;
         }
     }
 }

@@ -162,6 +162,7 @@
             this.Controls.Add(this.EndMsg);
             this.Controls.Add(this.GameOverMsg);
             this.Name = "EndForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EndForm";
             this.Load += new System.EventHandler(this.EndForm_Load);
             this.ResumeLayout(false);

@@ -121,4 +121,13 @@
   <data name="GridHopperTitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GridHopperTitle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TreeBorder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TreeBorder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TreeBorder1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TreeBorder1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TreeBorder2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TreeBorder2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

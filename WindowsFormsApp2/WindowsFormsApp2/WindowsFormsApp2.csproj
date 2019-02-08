@@ -105,5 +105,14 @@
   <ItemGroup>
     <None Include="Resources\GridHopperTitle.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TreeBorder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TreeBorder1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TreeBorder2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

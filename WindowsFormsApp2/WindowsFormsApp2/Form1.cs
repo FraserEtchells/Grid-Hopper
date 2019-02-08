@@ -16,23 +16,30 @@ namespace WindowsFormsApp2
         Button[,] btn = new Button[5, 5];
         Boolean trackButton = false;
         Boolean success = true;
+        Boolean hardMode;
         int score = 0;
-        int lives = 3;
+        int lives = 5;
         private static System.Timers.Timer movementTimer;
         private static System.Timers.Timer buttonTrackTimer;
         private static System.Timers.Timer checkSuccessTimer;
 
 
-        public GridHopper()
+        public GridHopper(bool inputHardMode)
         {
             InitializeComponent();
+
+            hardMode = inputHardMode;
+            if (hardMode == true)
+            {
+                lives = 3;
+            }
 
             for (int i = 0; i < btn.GetLength(0); i++)
             {
                 for (int j = 0; j < btn.GetLength(1); j++)
                 {
                     btn[i, j] = new Button();
-                    btn[i, j].SetBounds(75 * i, 75 * j, 60, 60); //70 width and height is perfect to make all the grid align, dont change them
+                    btn[i, j].SetBounds(75 * i + 240, 75 * j +60, 60, 60); //70 width and height is perfect to make all the grid align, dont change them
                     btn[i, j].BackColor = Color.LightGray;
                     btn[i, j].Click += new EventHandler(this.btnEvent_Click);
                     Controls.Add(btn[i, j]);
@@ -48,8 +55,10 @@ namespace WindowsFormsApp2
                 }
             }
 
+
             SetMovementTimer();
             SetButtonTrackTimer();
+           
         }
 
         private void colourSwap()
@@ -105,7 +114,14 @@ namespace WindowsFormsApp2
 
         private void SetMovementTimer()
         {
-            movementTimer = new System.Timers.Timer(1000);
+            if (hardMode == true)
+            {
+                movementTimer = new System.Timers.Timer(800);
+            }
+            else
+            {
+                movementTimer = new System.Timers.Timer(1000);
+            }
             movementTimer.Elapsed += ShiftGrid;
             movementTimer.AutoReset = true;
             movementTimer.Enabled = true;
@@ -124,7 +140,15 @@ namespace WindowsFormsApp2
 
         private void SetButtonTrackTimer()
         {
-            buttonTrackTimer = new System.Timers.Timer(5000);
+            if (hardMode == true)
+            {
+                buttonTrackTimer = new System.Timers.Timer(4000);
+            }
+            else
+            {
+                buttonTrackTimer = new System.Timers.Timer(5000);
+            }
+
             buttonTrackTimer.Elapsed += BeginButtonTrack;
             buttonTrackTimer.AutoReset = false;
             buttonTrackTimer.Enabled = true;
@@ -138,7 +162,14 @@ namespace WindowsFormsApp2
 
         private void SetCheckSuccessTimer()
         {
-            checkSuccessTimer = new System.Timers.Timer(800);
+            if (hardMode == true)
+            {
+                checkSuccessTimer = new System.Timers.Timer(600);
+            }
+            else
+            {
+                checkSuccessTimer = new System.Timers.Timer(800);
+            }
             checkSuccessTimer.Elapsed += CheckSuccess;
             checkSuccessTimer.AutoReset = false;
             checkSuccessTimer.Enabled = true;
@@ -162,8 +193,21 @@ namespace WindowsFormsApp2
             {
                 Console.WriteLine("0 lives");
                 Console.WriteLine(score);
-                Application.Exit();
+                closeGridHopper();
             }
+        }
+
+        private void closeGridHopper()
+        {
+            EndForm end = new EndForm(score);
+            this.Invoke((Action)delegate { GridHopper.ActiveForm.Hide(); }); // constructed from https://stackoverflow.com/questions/18718303/cross-thread-operation-not-valid-when-trying-to-hide-the-form as there seemed to be no other solution/guidelines on how to deal with threading issue
+            movementTimer.Enabled = false;
+            end.ShowDialog();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closeGridHopper();
         }
     }
 }
