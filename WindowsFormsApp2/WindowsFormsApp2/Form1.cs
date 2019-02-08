@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace WindowsFormsApp2
 {
@@ -22,11 +23,12 @@ namespace WindowsFormsApp2
         private static System.Timers.Timer movementTimer;
         private static System.Timers.Timer buttonTrackTimer;
         private static System.Timers.Timer checkSuccessTimer;
-
+        private SoundPlayer robloxSound;
 
         public GridHopper(bool inputHardMode)
         {
             InitializeComponent();
+            robloxSound = new SoundPlayer(@"C:\Users\swive\Desktop\Dundee\Year2_sem2\AC22005 Comp Systems 2B\MyProject\Grid-Hopper\WindowsFormsApp2\Extras\robloxSound.wav");
 
             hardMode = inputHardMode;
             if (hardMode == true)
@@ -97,7 +99,6 @@ namespace WindowsFormsApp2
             {
                 success = false;
             }
-
         }
 
         private void copyColor() //allows each row to copy the color of the row to it's right, simulating the movement of the grid
@@ -191,6 +192,7 @@ namespace WindowsFormsApp2
 
             if (lives == 0)
             {
+                robloxSound.Play();
                 Console.WriteLine("0 lives");
                 Console.WriteLine(score);
                 closeGridHopper();
