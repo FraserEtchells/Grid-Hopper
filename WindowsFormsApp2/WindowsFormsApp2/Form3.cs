@@ -40,8 +40,9 @@ namespace WindowsFormsApp2
         private void TryAgainBtn_Click(object sender, EventArgs e)
         {
             MainMenu restartMainMenu = new MainMenu();
-            this.Invoke((Action)delegate { EndForm.ActiveForm.Close(); }); // constructed from https://stackoverflow.com/questions/18718303/cross-thread-operation-not-valid-when-trying-to-hide-the-form as there seemed to be no other solution/guidelines on how to deal with threading issue
-            restartMainMenu.Show();
+            //this.Invoke((Action)delegate { EndForm.ActiveForm.Close(); }); // constructed from https://stackoverflow.com/questions/18718303/cross-thread-operation-not-valid-when-trying-to-hide-the-form as there seemed to be no other solution/guidelines on how to deal with threading issue
+            this.Hide();
+            restartMainMenu.ShowDialog();
         }
 
         private void EndForm_Load(object sender, EventArgs e)
