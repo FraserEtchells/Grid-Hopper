@@ -19,7 +19,7 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
             finalScore = score;
-            ScoreBox.Text = finalScore.ToString();
+            ScoreMsg.Text = "Your score is: " + finalScore.ToString();
         }
 
         private void EndForm_Load(EventArgs e, object sender)
@@ -37,5 +37,16 @@ namespace WindowsFormsApp2
             this.Close();
         }
 
+        private void TryAgainBtn_Click(object sender, EventArgs e)
+        {
+            MainMenu restartMainMenu = new MainMenu();
+            this.Invoke((Action)delegate { EndForm.ActiveForm.Close(); }); // constructed from https://stackoverflow.com/questions/18718303/cross-thread-operation-not-valid-when-trying-to-hide-the-form as there seemed to be no other solution/guidelines on how to deal with threading issue
+            restartMainMenu.Show();
+        }
+
+        private void EndForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

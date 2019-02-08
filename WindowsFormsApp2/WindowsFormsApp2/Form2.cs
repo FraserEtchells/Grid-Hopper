@@ -33,19 +33,6 @@ namespace WindowsFormsApp2
             
         }
 
-        private void optionsToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            string text = "======GRID HOPPER INSTRUCTION MANUAL ======== \n" +
-               "\nThe aim of the game is to survive as long as possible. \n" +
-               "\nYou control a box on the first left column of the grid.\n" +
-               "\nYou can only make it move up or down your column.\n" +
-               "\nAvoid the red boxes, select the row that has no red boxes in order to progress \n" +
-               "\n ===================================";
-
-
-            MessageBox.Show(text);
-        }
-
         private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             Close();
@@ -59,6 +46,19 @@ namespace WindowsFormsApp2
         private void hardToolStripMenuItem_Click(object sender, EventArgs e)
         {
             hardMode = true;
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string text = "======GRID HOPPER INSTRUCTION MANUAL ======== \n" +
+               "\nThe aim of the game is to survive as long as possible. \n" +
+               "\nYou control a box on the first left column of the grid.\n" +
+               "\nYou can only make it move up or down your column.\n" +
+               "\nAvoid the red boxes, select the row that has no red boxes in order to progress \n" +
+               "\n ===================================";
+
+
+            MessageBox.Show(text);
         }
     }
 }

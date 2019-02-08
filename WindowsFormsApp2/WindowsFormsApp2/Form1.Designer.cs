@@ -84,6 +84,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.menuStrip1);
+            this.MaximumSize = new System.Drawing.Size(1120, 650);
+            this.MinimumSize = new System.Drawing.Size(1120, 650);
             this.Name = "GridHopper";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GridHopper";
