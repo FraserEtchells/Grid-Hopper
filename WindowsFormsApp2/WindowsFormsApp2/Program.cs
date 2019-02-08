@@ -16,9 +16,8 @@ namespace WindowsFormsApp2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           // Application.Run(new MainMenu());
-            // Application.Run(new EndForm());
-            Application.Run(new GridHopper());
+            Application.Run(new MainMenu());
+            //Application.Run(new EndForm());
         }
     }
 }

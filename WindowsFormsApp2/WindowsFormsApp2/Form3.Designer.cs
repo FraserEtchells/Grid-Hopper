@@ -34,10 +34,10 @@
             this.ExitBtn = new System.Windows.Forms.Button();
             this.ScoreMsg = new System.Windows.Forms.RichTextBox();
             this.ScoreBox = new System.Windows.Forms.TextBox();
+            this.UserNameBox = new System.Windows.Forms.RichTextBox();
             this.EntUserNameMsg = new System.Windows.Forms.TextBox();
             this.LeaderBoardBox = new System.Windows.Forms.RichTextBox();
             this.LeaderboardMsg = new System.Windows.Forms.TextBox();
-            this.UserNameBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // GameOverMsg
@@ -73,7 +73,6 @@
             this.TryAgainBtn.TabIndex = 2;
             this.TryAgainBtn.Text = "Try Again?";
             this.TryAgainBtn.UseVisualStyleBackColor = true;
-            this.TryAgainBtn.Click += new System.EventHandler(this.TryAgainBtn_Click);
             // 
             // ExitBtn
             // 
@@ -88,10 +87,10 @@
             // ScoreMsg
             // 
             this.ScoreMsg.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreMsg.Location = new System.Drawing.Point(382, 46);
+            this.ScoreMsg.Location = new System.Drawing.Point(414, 46);
             this.ScoreMsg.Name = "ScoreMsg";
             this.ScoreMsg.ReadOnly = true;
-            this.ScoreMsg.Size = new System.Drawing.Size(190, 42);
+            this.ScoreMsg.Size = new System.Drawing.Size(158, 42);
             this.ScoreMsg.TabIndex = 4;
             this.ScoreMsg.Text = "Your Score Was:";
             // 
@@ -104,12 +103,21 @@
             this.ScoreBox.TabIndex = 5;
             this.ScoreBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // UserNameBox
+            // 
+            this.UserNameBox.Location = new System.Drawing.Point(389, 131);
+            this.UserNameBox.Name = "UserNameBox";
+            this.UserNameBox.Size = new System.Drawing.Size(303, 50);
+            this.UserNameBox.TabIndex = 6;
+            this.UserNameBox.Text = "";
+            this.UserNameBox.TextChanged += new System.EventHandler(this.UserNameBox_TextChanged);
+            // 
             // EntUserNameMsg
             // 
             this.EntUserNameMsg.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.EntUserNameMsg.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EntUserNameMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EntUserNameMsg.Location = new System.Drawing.Point(390, 126);
+            this.EntUserNameMsg.Location = new System.Drawing.Point(389, 110);
             this.EntUserNameMsg.Name = "EntUserNameMsg";
             this.EntUserNameMsg.ReadOnly = true;
             this.EntUserNameMsg.Size = new System.Drawing.Size(150, 20);
@@ -124,7 +132,6 @@
             this.LeaderBoardBox.Size = new System.Drawing.Size(334, 232);
             this.LeaderBoardBox.TabIndex = 8;
             this.LeaderBoardBox.Text = "";
-            this.LeaderBoardBox.TextChanged += new System.EventHandler(this.LeaderBoardBox_TextChanged);
             // 
             // LeaderboardMsg
             // 
@@ -138,25 +145,16 @@
             this.LeaderboardMsg.TabIndex = 9;
             this.LeaderboardMsg.Text = "Leaderboards";
             // 
-            // UserNameBox
-            // 
-            this.UserNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserNameBox.Location = new System.Drawing.Point(382, 152);
-            this.UserNameBox.Name = "UserNameBox";
-            this.UserNameBox.Size = new System.Drawing.Size(334, 41);
-            this.UserNameBox.TabIndex = 10;
-            this.UserNameBox.TextChanged += new System.EventHandler(this.UserNameBox_TextChanged);
-            // 
             // EndForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(850, 510);
-            this.Controls.Add(this.UserNameBox);
             this.Controls.Add(this.LeaderboardMsg);
             this.Controls.Add(this.LeaderBoardBox);
             this.Controls.Add(this.EntUserNameMsg);
+            this.Controls.Add(this.UserNameBox);
             this.Controls.Add(this.ScoreBox);
             this.Controls.Add(this.ScoreMsg);
             this.Controls.Add(this.ExitBtn);
@@ -179,9 +177,9 @@
         private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.RichTextBox ScoreMsg;
         private System.Windows.Forms.TextBox ScoreBox;
+        private System.Windows.Forms.RichTextBox UserNameBox;
         private System.Windows.Forms.TextBox EntUserNameMsg;
         private System.Windows.Forms.RichTextBox LeaderBoardBox;
         private System.Windows.Forms.TextBox LeaderboardMsg;
-        private System.Windows.Forms.TextBox UserNameBox;
     }
 }

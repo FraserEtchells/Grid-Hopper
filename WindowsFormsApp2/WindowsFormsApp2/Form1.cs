@@ -144,11 +144,6 @@ namespace WindowsFormsApp2
             checkSuccessTimer.Enabled = true;
         }
 
-        private void LiveMsgBox_TextChanged(object sender, EventArgs e)
-        {
-            this.Text = "3";
-        }
-
         private void CheckSuccess(Object source, System.Timers.ElapsedEventArgs e)
         {
             Console.WriteLine("Checking Success");
@@ -156,27 +151,19 @@ namespace WindowsFormsApp2
             {
                 Console.WriteLine("hit");
                 score++;
-               
             }
             else
             {
                 Console.WriteLine("miss");
                 lives--;
-                
             }
 
             if (lives == 0)
             {
-               
-
-               // Console.WriteLine("0 lives");
+                Console.WriteLine("0 lives");
                 Console.WriteLine(score);
                 Application.Exit();
             }
-   
         }
-
-       
-      
     }
 }
