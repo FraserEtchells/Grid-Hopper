@@ -1,4 +1,6 @@
-﻿namespace WindowsFormsApp2
+﻿using System.Windows.Forms;
+
+namespace WindowsFormsApp2
 {
     partial class EndForm
     {
@@ -87,7 +89,7 @@
             // ScoreMsg
             // 
             this.ScoreMsg.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreMsg.Location = new System.Drawing.Point(382, 46);
+            this.ScoreMsg.Location = new System.Drawing.Point(396, 46);
             this.ScoreMsg.Name = "ScoreMsg";
             this.ScoreMsg.ReadOnly = true;
             this.ScoreMsg.Size = new System.Drawing.Size(190, 42);
@@ -97,9 +99,10 @@
             // ScoreBox
             // 
             this.ScoreBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreBox.Location = new System.Drawing.Point(592, 56);
+            this.ScoreBox.Location = new System.Drawing.Point(592, 46);
             this.ScoreBox.Name = "ScoreBox";
-            this.ScoreBox.Size = new System.Drawing.Size(89, 28);
+            this.ScoreBox.ReadOnly = true;
+            this.ScoreBox.Size = new System.Drawing.Size(61, 28);
             this.ScoreBox.TabIndex = 5;
             this.ScoreBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -143,7 +146,6 @@
             this.UserNameBox.Name = "UserNameBox";
             this.UserNameBox.Size = new System.Drawing.Size(262, 56);
             this.UserNameBox.TabIndex = 10;
-            this.UserNameBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged, KeyEventArgs e);
             // 
             // EndForm
             // 
@@ -164,7 +166,6 @@
             this.Name = "EndForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EndForm";
-            this.Load += new System.EventHandler(this.EndForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

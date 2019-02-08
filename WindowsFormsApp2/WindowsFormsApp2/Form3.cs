@@ -19,11 +19,12 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
             finalScore = score;
+            ScoreBox.Text = finalScore.ToString();
         }
 
         private void EndForm_Load(EventArgs e, object sender)
         {
-
+          
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -36,34 +37,5 @@ namespace WindowsFormsApp2
             this.Close();
         }
 
-        private void UserNameBox_TextChanged(object sender, EventArgs e) //Method is to read from username textbox and write to a file
-        {
-            string userName = UserNameBox.Text;
-            StreamWriter sw = new StreamWriter("C:/Users/swive/Desktop/Dundee/Year2_sem2/AC22005 Comp Systems 2B/MyProject/Grid-Hopper/WindowsFormsApp2/Extras/leaderboardUser.txt");
-            sw.WriteLine(userName);
-            sw.Close();
-
-        }
     }
 }
-
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ExitBtn_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void UserNameBox_TextChanged(object sender, EventArgs e) //Method is to read from username textbox and write to a file
-        {
-            string userName = UserNameBox.Text;
-            StreamWriter sw = new StreamWriter("C:/Users/swive/Desktop/Dundee/Year2_sem2/AC22005 Comp Systems 2B/MyProject/Grid-Hopper/WindowsFormsApp2/Extras/leaderboardUser.txt");
-            sw.WriteLine(userName);
-            sw.Close();
-
-        }
