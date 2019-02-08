@@ -108,7 +108,7 @@
             this.EntUserNameMsg.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.EntUserNameMsg.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EntUserNameMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EntUserNameMsg.Location = new System.Drawing.Point(389, 110);
+            this.EntUserNameMsg.Location = new System.Drawing.Point(390, 126);
             this.EntUserNameMsg.Name = "EntUserNameMsg";
             this.EntUserNameMsg.ReadOnly = true;
             this.EntUserNameMsg.Size = new System.Drawing.Size(150, 20);
@@ -123,6 +123,7 @@
             this.LeaderBoardBox.Size = new System.Drawing.Size(334, 232);
             this.LeaderBoardBox.TabIndex = 8;
             this.LeaderBoardBox.Text = "";
+            this.LeaderBoardBox.TextChanged += new System.EventHandler(this.LeaderBoardBox_TextChanged);
             // 
             // LeaderboardMsg
             // 
@@ -138,12 +139,12 @@
             // 
             // UserNameBox
             // 
-            this.UserNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserNameBox.Location = new System.Drawing.Point(391, 139);
+            this.UserNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserNameBox.Location = new System.Drawing.Point(382, 152);
             this.UserNameBox.Name = "UserNameBox";
-            this.UserNameBox.Size = new System.Drawing.Size(262, 56);
+            this.UserNameBox.Size = new System.Drawing.Size(334, 41);
             this.UserNameBox.TabIndex = 10;
-            this.UserNameBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged, KeyEventArgs e);
+            this.UserNameBox.TextChanged += new System.EventHandler(this.UserNameBox_TextChanged);
             // 
             // EndForm
             // 
