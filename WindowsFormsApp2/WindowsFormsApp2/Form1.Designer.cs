@@ -49,6 +49,7 @@
             this.LiveMsgBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LiveMsgBox.Location = new System.Drawing.Point(601, 98);
             this.LiveMsgBox.Name = "LiveMsgBox";
+            this.LiveMsgBox.ReadOnly = true;
             this.LiveMsgBox.Size = new System.Drawing.Size(114, 28);
             this.LiveMsgBox.TabIndex = 2;
             this.LiveMsgBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

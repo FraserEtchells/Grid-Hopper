@@ -146,7 +146,7 @@ namespace WindowsFormsApp2
 
         private void LiveMsgBox_TextChanged(object sender, EventArgs e)
         {
-
+            this.Text = "3";
         }
 
         private void CheckSuccess(Object source, System.Timers.ElapsedEventArgs e)
@@ -167,7 +167,7 @@ namespace WindowsFormsApp2
 
             if (lives == 0)
             {
-                LiveMsgBox.Text = lives.ToString();
+               
 
                // Console.WriteLine("0 lives");
                 Console.WriteLine(score);
