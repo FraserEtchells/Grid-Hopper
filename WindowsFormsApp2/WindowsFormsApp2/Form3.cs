@@ -47,5 +47,12 @@ namespace WindowsFormsApp2
             string[] lines = System.IO.File.ReadAllLines(@"C:/Users/swive/Desktop/Dundee/Year2_sem2/AC22005 Comp Systems 2B/MyProject/Grid-Hopper/WindowsFormsApp2/Extras/leaderboardUser.txt");
 
         }
+
+        private void TryAgainBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GridHopper gridHopper1 = new GridHopper();
+            gridHopper1.ShowDialog();
+        }
     }
 }

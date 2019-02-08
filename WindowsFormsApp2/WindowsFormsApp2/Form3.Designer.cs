@@ -73,6 +73,7 @@
             this.TryAgainBtn.TabIndex = 2;
             this.TryAgainBtn.Text = "Try Again?";
             this.TryAgainBtn.UseVisualStyleBackColor = true;
+            this.TryAgainBtn.Click += new System.EventHandler(this.TryAgainBtn_Click);
             // 
             // ExitBtn
             // 

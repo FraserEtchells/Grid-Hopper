@@ -165,5 +165,10 @@ namespace WindowsFormsApp2
                 Application.Exit();
             }
         }
+
+        private void LiveMsgBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
